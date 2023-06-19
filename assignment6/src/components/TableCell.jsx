@@ -1,9 +1,12 @@
-import React, {Component} from "react";
+import React from "react";
 
-const TableCell = ({content, selectedColor, onCellClick}) => {
-    const setColor = () => {
-        onCellClick(selectedColor);
-    }
-    return <td onclick={setColor}>{content}</td>
-}
+const TableCell = ({setCellColor}) => {
+
+    // var background;
+    // const setColor = () => {
+    //     background = selectedColor;
+        
+    // }
+    return ( <td onClick={(event) => setCellColor(event)}></td> );
+};
 export default TableCell;
