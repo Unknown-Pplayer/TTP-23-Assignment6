@@ -1,13 +1,21 @@
 import React from 'react';
 import TableCell from './TableCell';
+import Table from './Table';
 
-const TableRow = ({rowData, selectedColor}) => {
-  
+const TableRow = ({row , setCellColor}) => {
+   
     return (
       <tr>
-        {rowData.map((index, content) => (
-          <TableCell key={index} content={""} selectedColor={selectedColor} />
+        {row.map((row, colNumber) => (
+          <TableCell 
+          key={colNumber}  
+          row={row} 
+          setCellColor={setCellColor} 
+          
+          />
+          
         ))}
+      
       </tr>
     );
   };

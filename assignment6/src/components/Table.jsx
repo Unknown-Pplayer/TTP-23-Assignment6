@@ -12,47 +12,40 @@ import TableRow from "./TableRow";
 
     const addColumn = () => {
         setGrid(prevState => {
-            const updatedGrid = prevState.map(row => [...row, ""]);
-            return updatedGrid;
+            return prevState.map(row => [...row, ""]);
+            
         });
           
     }
-            const selectColor = (event) => {
-                setSelectedColor(event.target.value);
-                console.log(selectedColor);
-                
-            }
-        
-        
+    const selectColor = (event) => {
+        setSelectedColor(event.target.value);   
+    };
     
+    const setCellColor = (event) => {
+        event.target.style.backgroundColor = selectedColor;
+    };
 
-    const clickCell = (event) => {
-        const color = selectedColor;
-        event.target.style.backgroundColor = color;
-      };
-
-    /*
-    const selectColor = (e) => {
-        setSelectd(e.target.value);
-    }*/
-    
- 
+    console.log(selectedColor)
     return (
         <div>
-            <div>
-                {/* onClick ={clickCell} */}
-            </div>
          <table>
             <tbody>
              {grid.map((row, index) => (
-                  <TableRow key={index} rowData={row} color={selectedColor}/>   
+                  <TableRow
+                  row={row} 
+                  key={index} 
+                  setCellColor={setCellColor}
+                  /> 
+            
              ))}
+             {console.log(selectedColor)}
             </tbody>
          </table>
              <button onClick={addRow}>Add Row</button>
              <button onClick={addColumn}>Add Column</button> 
              <label >Select a color:</label>
-            <select  value={selectedColor} onChange={() => selectColor(event)}>
+            <select  value="null" onChange={(event) => selectColor(event) }>
+                <option value="---">---</option>
                 <option value="red">Red</option>
                 <option value="green">Green</option>
                 <option value="blue">Blue</option>
