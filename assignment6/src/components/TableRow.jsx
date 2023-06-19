@@ -1,14 +1,14 @@
 import React from 'react';
 import TableCell from './TableCell';
 
-const TableRow = ({ rowData }) => {
+const TableRow = (rowData) => {
     return (
       <tr>
-        {rowData.map((content, index) => (
-          <TableCell key={index} content={content} />
-        ))}
+        {/* {rowData.map((content, index) => ( */}
+          <TableCell  />
+        {/* ))} */}
       </tr>
     );
   };
-
+//key={index} content={content}
 export default TableRow;
