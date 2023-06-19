@@ -37,8 +37,8 @@
   }
 }
 
-table,
-th,
+
+tr,
 td {
   border: 1px solid;
   height: 30px;
